@@ -5,10 +5,10 @@ metadata:
   labels:
     app: prueba-k8s
 spec:
-  replicas:1
+  replicas: 1
   selector:
     matchLabels:
-      app:prueba-pod-k8s
+      app: prueba-pod-k8s
   template:
     metadata:
       labels:
@@ -21,8 +21,8 @@ spec:
         - name: http-port
           containerPort: 5002
         env:
-          - name: 
+          - name: NOMBRE
             valueFrom:
               configMapKeyRef:
-                name: 
-                key: 
+                name: cm-prueba-k8s
+                key: nombre
