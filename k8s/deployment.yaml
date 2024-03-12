@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-prueba-k8s
+  labels:
+    app: prueba-k8s
+spec:
+  replicas:1
+  selector:
+    matchLabels:
+      app:prueba-pod-k8s
+  template:
+    metadata:
+      labels:
+        app: prueba-pod-k8s
+    spec:
+      containers:
+      - image: pepepfoter15/prueba_k8s:v1
+        name: contenedor-prueba-k8s
+        ports:
+        - name: http-port
+          containerPort: 5002
+        env:
+          - name: 
+            valueFrom:
+              configMapKeyRef:
+                name: 
+                key: 
