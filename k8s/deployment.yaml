@@ -15,7 +15,7 @@ spec:
         app: prueba-pod-k8s
     spec:
       containers:
-      - image: pepepfoter15/prueba_k8s:v1
+      - image: pepepfoter15/prueba_k8s:v2
         name: contenedor-prueba-k8s
         ports:
         - name: http-port
